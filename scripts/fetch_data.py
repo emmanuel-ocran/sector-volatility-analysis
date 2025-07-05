@@ -1,5 +1,4 @@
-# scripts/data_download.py
-
+# import packages
 import yfinance as yf
 import pandas as pd
 import os
@@ -18,8 +17,9 @@ sector_tickers = {
 start_date = "2018-06-01"
 end_date = "2025-06-01"
 
+# Function to download 
 def download_and_save_sector_data(sector_name, tickers, output_dir="data"):
-    print(f"[INFO] Fetching data for {sector_name}...")
+    print(f"Fetching data for {sector_name}...")
 
     try:
         df = yf.download(tickers, start=start_date, end=end_date, progress=False,  auto_adjust=False)
@@ -39,10 +39,11 @@ def download_and_save_sector_data(sector_name, tickers, output_dir="data"):
         filename = f"{sector_name.lower().replace(' ', '_')}.csv"
         df.to_csv(os.path.join(output_dir, filename), index=False)
 
-        print(f"[SUCCESS] Saved to: {filename}")
+        print(f"Saved to: {filename}")
     except Exception as e:
-        print(f"[ERROR] {sector_name}: {e}")
+        print(f" {sector_name}: {e}")
 
+# Function to run batch download
 def run_batch_download():
     for sector, tickers in sector_tickers.items():
         download_and_save_sector_data(sector, tickers)
