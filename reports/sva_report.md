@@ -56,7 +56,6 @@ Investors often struggle to identify which sectors offer stable, high-performing
 - Python, Pandas, NumPy, Matplotlib, Seaborn
 - `yfinance` API for stock data retrieval
 - Jupyter Notebook for analysis
-- Plotly for interactive visuals (optional)
 
 ### Feature Engineering:
 - **Daily Return**: Percent change in closing price

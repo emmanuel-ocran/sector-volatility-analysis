@@ -1,3 +1,4 @@
+![Project Preview](project_banner.png)
 # Sector Volatility Analysis  
 *Author: Emmanuel Ocran*  
 
